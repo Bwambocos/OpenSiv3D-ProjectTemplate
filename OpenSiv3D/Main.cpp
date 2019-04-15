@@ -7,14 +7,20 @@
 #include "Result.h"
 #include "Score.h"
 
-// メイン関数
+// メイン関数（プログラムはここから始まる）
 void Main()
 {
+	// ウィンドウのサイズを変更
 	Window::Resize(GameInfo::Width, GameInfo::Height);
+
+	// ウィンドウのタイトルを変更
 	Window::SetTitle(GameInfo::Title);
+
+	// 背景色を変更
 	Graphics::SetBackground(GameInfo::BackgroundColor);
 
-	// 使用するシーン
+	// 使用するシーンを追加
+	// U"なんちゃら" で書いた「なんちゃら」がシーンを識別する名前になる
 	MyApp manager;
 	manager.setFadeColor(GameInfo::FadeInColor);
 	manager.add<Title>(U"Title");
@@ -22,7 +28,7 @@ void Main()
 	manager.add<Result>(U"Result");
 	manager.add<Score>(U"Score");
 
-	// メインループ
+	// メインループで更新と描画をする
 	while (System::Update())
 	{
 		if (!manager.update()) break;

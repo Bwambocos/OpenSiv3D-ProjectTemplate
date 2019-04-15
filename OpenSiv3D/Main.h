@@ -6,19 +6,25 @@
 // 全てのシーンからアクセスできるデータ
 struct GameData
 {
-
+	// 例えば，ゲーム内で得たスコアは結果画面でも使いたい．
+	// こういった場合にここに
+	//  int gameScore = 0;
+	// などと書いておくことで，ゲーム画面でも結果画面でも使うことが出来る．
+	// ここのデータを使うときは
+	//  getData().gameScore = 114514;
+	// のように使うことが出来る．
 };
 
 using MyApp = SceneManager<String, GameData>;
 
-// 基本情報
+// ゲームの基本情報
 namespace GameInfo
 {
-	// 解像度
+	// ウィンドウの解像度
 	const int32 Width = 1280;
 	const int32 Height = 720;
 
-	// タイトル
+	// ウィンドウのタイトル
 	const String Title = U"Test App";
 
 	// 背景色
